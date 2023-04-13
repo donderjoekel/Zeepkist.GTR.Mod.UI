@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
+        <LangVersion>default</LangVersion>
+        <AssemblyName>TNRD.Zeepkist.GTR.UI</AssemblyName>
+        <RootNamespace>TNRD.Zeepkist.GTR.UI</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="UnityEngine">
+        <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Zeepkist\Zeepkist_Data\Managed\UnityEngine.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.CoreModule">
+        <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Zeepkist\Zeepkist_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UI">
+        <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Zeepkist\Zeepkist_Data\Managed\UnityEngine.UI.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UIElementsModule">
+        <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Zeepkist\Zeepkist_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UIElementsNativeModule">
+        <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Zeepkist\Zeepkist_Data\Managed\UnityEngine.UIElementsNativeModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UIModule">
+        <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Zeepkist\Zeepkist_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="xcopy &quot;$(TargetPath)&quot; &quot;E:\Repositories\Unity\Zeepkist Tournaments UI\Assets\Plugins&quot; /Y" />
+        <Exec Command="xcopy &quot;$(TargetPath)&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\Zeepkist\BepInEx\plugins\GTR&quot; /Y" />
+    </Target>
+
+</Project>
